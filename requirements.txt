@@ -1,0 +1,11 @@
+mss>=9.0.1
+pydirectinput>=1.0.4
+opencv-python>=4.9.0.80
+numpy>=1.26.4
+keyboard>=0.13.5
+pywin32>=306
+psutil>=5.9.8
+Pillow>=10.3.0
+pyinstaller>=6.6.0
+pyinstaller-hooks-contrib>=2024.6
+pefile!=2024.8.26
