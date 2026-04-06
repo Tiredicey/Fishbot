@@ -1,4 +1,3 @@
-```markdown
 # 🎣 FishBot
 
 Automated fishing bot for Roblox with a dark-themed GUI, real-time detection, and zero-config persistence.
@@ -72,67 +71,52 @@ Take it one step at a time. Each step has a status indicator so you always know 
     ├── bot.log             # Runtime log (created on first run)
     ├── fishbot_config.json # Your settings (auto-saved)
     └── debug_*.png         # Vision snapshots for calibration help
-```
+🔍 Troubleshooting
 
----
+Bot doesn't detect bites
 
-## 🔍 Troubleshooting
+Recalibrate Splash color → Increase Splash min px in Settings → Check debug_cast1.png
 
-**Bot doesn't detect bites**
-> Recalibrate Splash color → Increase Splash min px in Settings → Check `debug_cast1.png`
+Keyboard hook not working
 
-**Keyboard hook not working**
-> Close the app and **Run as Administrator**.
+Close the app and Run as Administrator.
 
-**Build fails on Python 3.14**
-> Install Python 3.11 side-by-side from [python.org](https://python.org/downloads) → re-run `build.bat`
+Build fails on Python 3.14
 
-**`system32\build.py` error**
-> Right-click `build.bat` → **Run as Administrator**. Ensure all files are extracted to the same folder.
+Install Python 3.11 side-by-side from python.org → re-run build.bat
 
----
+system32\build.py error
 
-## 📊 Session Panel
+Right-click build.bat → Run as Administrator. Ensure all files are extracted to the same folder.
 
-| Stat | What it means |
-| :--- | :--- |
-| **Catches** | Successful reels |
-| **Casts** | Total casts made |
-| **Timeouts** | Casts that exceeded the timeout limit and were re-cast |
-| **QTE** | Keystrokes sent during QTE sequences |
-| **CPH** | Catches Per Hour |
-| **Runtime** | Time elapsed since last Start |
-
----
-
-## 🛠️ Settings Reference
-
-| Setting | Default | Notes |
-| :--- | :--- | :--- |
-| **Cast hold** | `80 ms` | How long the mouse button is held on cast |
-| **Cast timeout** | `40,000 ms` | Re-casts if no bite occurs within this window |
-| **Settle wait** | `3,000 ms` | Wait time after cast before watching for the bobber |
-| **Reel cooldown** | `2,500 ms` | Pause duration between a catch and the next cast |
-| **Bite confirm** | `2 frames`| Consecutive frames splash must appear to confirm a bite |
-| **Acquire frames**| `3 frames`| Frames bobber must appear before watching for bites |
-
----
-
-## 📄 License
+📊 Session Panel
+Stat	What it means
+Catches	Successful reels
+Casts	Total casts made
+Timeouts	Casts that exceeded the timeout limit and were re-cast
+QTE	Keystrokes sent during QTE sequences
+CPH	Catches Per Hour
+Runtime	Time elapsed since last Start
+🛠️ Settings Reference
+Setting	Default	Notes
+Cast hold	80 ms	How long the mouse button is held on cast
+Cast timeout	40,000 ms	Re-casts if no bite occurs within this window
+Settle wait	3,000 ms	Wait time after cast before watching for the bobber
+Reel cooldown	2,500 ms	Pause duration between a catch and the next cast
+Bite confirm	2 frames	Consecutive frames splash must appear to confirm a bite
+Acquire frames	3 frames	Frames bobber must appear before watching for bites
+📄 License
 
 MIT
 
----
+🧠 Design Philosophy
 
-## 🧠 Design Philosophy
+For developers and contributors, here is the rationale behind FishBot's UX:
 
-*For developers and contributors, here is the rationale behind FishBot's UX:*
-
-| Choice | Rationale |
-| :--- | :--- |
-| **One task per section, never nested** | Reduces scanning anxiety. Users finish a section fully before moving on. |
-| **`✓` / `✗` indicators called out** | No guessing whether setup is done—binary, clear state. |
-| **"Take it one step at a time" framing**| Non-confrontational pacing; creates zero urgency. |
-| **Troubleshooting = Causes + 1-line fixes**| Fast resolution. No walls of text when something goes wrong. |
-| **No prerequisites longer than a table** | Walls of version numbers before "hello" create task avoidance. |
-| **Build is literally one double-click** | Reduces activation energy to zero—nothing to figure out before the reward. |
+Choice	Rationale
+One task per section, never nested	Reduces scanning anxiety. Users finish a section fully before moving on.
+✓ / ✗ indicators called out	No guessing whether setup is done—binary, clear state.
+"Take it one step at a time" framing	Non-confrontational pacing; creates zero urgency.
+Troubleshooting = Causes + 1-line fixes	Fast resolution. No walls of text when something goes wrong.
+No prerequisites longer than a table	Walls of version numbers before "hello" create task avoidance.
+Build is literally one double-click	Reduces activation energy to zero—nothing to figure out before the reward.
