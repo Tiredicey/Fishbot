@@ -119,5 +119,3 @@ MIT
 - Troubleshooting: causes + one-line fixes.  
 - Minimal prerequisites and one-click build to lower activation energy.
 
----
-
