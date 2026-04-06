@@ -1,4 +1,3 @@
-
 # 🎣 FishBot
 
 Automated fishing bot for Roblox with a dark-themed GUI, real-time detection, and zero-config persistence.
@@ -72,7 +71,6 @@ Take it one step at a time. Each step has a status indicator so you always know 
     ├── bot.log             # Runtime log (created on first run)
     ├── fishbot_config.json # Your settings (auto-saved)
     └── debug_*.png         # Vision snapshots for calibration help
-
 🔍 Troubleshooting
 
 Bot doesn't detect bites
@@ -99,7 +97,6 @@ Timeouts	Casts that exceeded the timeout limit and were re-cast
 QTE	Keystrokes sent during QTE sequences
 CPH	Catches Per Hour
 Runtime	Time elapsed since last Start
-
 🛠️ Settings Reference
 Setting	Default	Notes
 Cast hold	80 ms	How long the mouse button is held on cast
@@ -108,7 +105,6 @@ Settle wait	3,000 ms	Wait time after cast before watching for the bobber
 Reel cooldown	2,500 ms	Pause duration between a catch and the next cast
 Bite confirm	2 frames	Consecutive frames splash must appear to confirm a bite
 Acquire frames	3 frames	Frames bobber must appear before watching for bites
-
 📄 License
 
 MIT
