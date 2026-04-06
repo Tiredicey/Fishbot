@@ -1,6 +1,4 @@
 
-
-```markdown
 # 🎣 FishBot
 
 Automated fishing bot for Roblox with a dark-themed GUI, real-time detection, and zero-config persistence.
@@ -9,135 +7,117 @@ Automated fishing bot for Roblox with a dark-themed GUI, real-time detection, an
 
 ## ✨ What it does
 
-- Casts, waits, detects bites via cyan splash detection, reels automatically
-- Visual calibration — click pixels, no code editing
-- Hotkeys, session stats, live state display
-- Config auto-saves between sessions
+- **Automated Fishing:** Casts, waits, detects bites via cyan splash detection, and reels automatically.
+- **Visual Calibration:** Click pixels to configure—no code editing required.
+- **Live Dashboard:** Custom hotkeys, session stats, and live state display.
+- **Zero-Config Persistence:** Configuration auto-saves seamlessly between sessions.
 
 ---
 
 ## 🖥️ Requirements
 
-| | |
-|---|---|
-| OS | Windows 10 / 11 |
-| Python | 3.9 – 3.12 recommended · 3.14 attempts with warning |
-| Roblox | Running before you launch FishBot |
+| Prerequisite | Details |
+| :--- | :--- |
+| **OS** | Windows 10 / 11 |
+| **Python** | 3.9 – 3.12 recommended · *3.14 attempts with warning* |
+| **Roblox** | Must be running *before* you launch FishBot |
 
 ---
 
-## 🚀 Quick start
+## 🚀 Quick Start
 
-```
-1. Download or clone this repo
-2. Double-click  build.bat
-3. Right-click   dist/FishBot.exe  →  Run as Administrator
-```
+1. Download or clone this repository.
+2. Double-click `build.bat`.
+3. Right-click `dist/FishBot.exe` → **Run as Administrator**.
 
-That's it. The build system handles the virtual environment and all dependencies automatically.
+> **Note:** That's it. The build system handles the virtual environment and all dependencies automatically.
 
 ---
 
-## ⚙️ First-time setup inside the app
+## ⚙️ First-Time Setup (In-App)
 
-Take it one step at a time — each step has a ✓ indicator so you always know where you are.
+Take it one step at a time. Each step has a status indicator so you always know your setup state:
+**Green `✓`** = Ready · **Red `✗`** = Needs attention
 
-```
-[ Calibration panel ]
-
-1.  Draw Scan Region   →  drag over water only, avoid UI and land
-2.  Bobber color       →  click Sample, hover the bobber, press Enter
-3.  Splash / Bite      →  wait for a bite flash, hover the cyan glow, press Enter
-4.  QTE Indicator      →  optional, only needed if your game shows QTE prompts
-```
-
-Green ✓ = ready · Red ✗ = needs attention
+### Calibration Panel
+1. **Draw Scan Region:** Drag over water only. Avoid UI elements and land.
+2. **Bobber Color:** Click *Sample*, hover over the bobber, and press `Enter`.
+3. **Splash / Bite:** Wait for a bite flash, hover over the cyan glow, and press `Enter`.
+4. **QTE Indicator:** *(Optional)* Only needed if your game shows Quick Time Event prompts.
 
 ---
 
 ## ⌨️ Hotkeys
 
 | Action | Default |
-|---|---|
-| Start / Stop | `Ctrl+Shift+S` |
-| Exit | `Ctrl+Shift+X` |
+| :--- | :--- |
+| **Start / Stop** | `Ctrl + Shift + S` |
+| **Exit** | `Ctrl + Shift + X` |
 
-Change any hotkey inside the app — click the button and press your combo.
+*Tip: Change any hotkey inside the app—just click the button and press your desired combo.*
 
 ---
 
 ## 📁 Files
 
-```
-fishbot.py          main application
-build.py            build orchestrator
-build.bat           one-click build entry
-fishbot.spec        PyInstaller config
-requirements.txt    pinned dependencies
+```text
+├── Source & Build
+│   ├── fishbot.py          # Main application
+│   ├── build.py            # Build orchestrator
+│   ├── build.bat           # One-click build entry
+│   ├── fishbot.spec        # PyInstaller config
+│   └── requirements.txt    # Pinned dependencies
+│
+└── Generated at Runtime
+    ├── bot.log             # Runtime log (created on first run)
+    ├── fishbot_config.json # Your settings (auto-saved)
+    └── debug_*.png         # Vision snapshots for calibration help
+🔍 Troubleshooting
 
-bot.log             runtime log (created on first run)
-fishbot_config.json your settings (auto-saved)
-debug_*.png         vision snapshots for calibration help
-```
+Bot doesn't detect bites
 
----
+Recalibrate Splash color → Increase Splash min px in Settings → Check debug_cast1.png
 
-## 🔍 Troubleshooting
+Keyboard hook not working
 
-**Bot doesn't detect bites**
-→ Recalibrate Splash color · increase Splash min px in Settings · check `debug_cast1.png`
+Close the app and Run as Administrator.
 
-**Keyboard hook not working**
-→ Run as Administrator
+Build fails on Python 3.14
 
-**Build fails on Python 3.14**
-→ Install Python 3.11 side-by-side from [python.org](https://python.org/downloads) · re-run `build.bat`
+Install Python 3.11 side-by-side from python.org → re-run build.bat
 
-**`system32\build.py` error**
-→ Right-click `build.bat` → Run as Administrator · all files must be in the same folder
+system32\build.py error
 
----
+Right-click build.bat → Run as Administrator. Ensure all files are extracted to the same folder.
 
-## 📊 Session panel
-
-| Stat | What it means |
-|---|---|
-| Catches | Successful reels |
-| Casts | Total casts |
-| Timeouts | Casts that exceeded the timeout and were re-cast |
-| QTE | Keystrokes sent during QTE sequences |
-| CPH | Catches per hour |
-| Runtime | Time since last Start |
-
----
-
-## 🛠️ Settings reference
-
-| Setting | Default | Notes |
-|---|---|---|
-| Cast hold | 80 ms | How long the mouse button is held on cast |
-| Cast timeout | 40 000 ms | Re-casts if no bite within this window |
-| Settle wait | 3 000 ms | Wait after cast before watching for bobber |
-| Reel cooldown | 2 500 ms | Pause between catch and next cast |
-| Bite confirm frames | 2 | Consecutive frames splash must appear to confirm bite |
-| Acquire frames | 3 | Frames bobber must appear before watching for bites |
-
----
-
-## 📄 License
+📊 Session Panel
+Stat	What it means
+Catches	Successful reels
+Casts	Total casts made
+Timeouts	Casts that exceeded the timeout limit and were re-cast
+QTE	Keystrokes sent during QTE sequences
+CPH	Catches Per Hour
+Runtime	Time elapsed since last Start
+🛠️ Settings Reference
+Setting	Default	Notes
+Cast hold	80 ms	How long the mouse button is held on cast
+Cast timeout	40,000 ms	Re-casts if no bite occurs within this window
+Settle wait	3,000 ms	Wait time after cast before watching for the bobber
+Reel cooldown	2,500 ms	Pause duration between a catch and the next cast
+Bite confirm	2 frames	Consecutive frames splash must appear to confirm a bite
+Acquire frames	3 frames	Frames bobber must appear before watching for bites
+📄 License
 
 MIT
-```
 
----
+🧠 Design Philosophy
 
-### Design decisions
+For developers and contributors, here is the rationale behind FishBot's UX:
 
-| Choice | Why |
-|---|---|
-| One task per section, never nested | Reduces scanning anxiety — you finish a section fully before moving on |
-| ✓ / ✗ indicators called out explicitly | No guessing whether setup is done — binary clear state |
-| "Take it one step at a time" framing | Non-confrontational pacing, no urgency |
-| Troubleshooting is causes + one-line fixes, not paragraphs | Fast resolution, no reading walls when something goes wrong |
-| No prerequisites list longer than a table | Walls of version numbers before "hello" create avoidance |
-| Build is literally one double-click | Reduces activation energy to zero — nothing to figure out before the reward |
+Choice	Rationale
+One task per section, never nested	Reduces scanning anxiety. Users finish a section fully before moving on.
+✓ / ✗ indicators called out	No guessing whether setup is done—binary, clear state.
+"Take it one step at a time" framing	Non-confrontational pacing; creates zero urgency.
+Troubleshooting = Causes + 1-line fixes	Fast resolution. No walls of text when something goes wrong.
+No prerequisites longer than a table	Walls of version numbers before "hello" create task avoidance.
+Build is literally one double-click	Reduces activation energy to zero—nothing to figure out before the reward.
