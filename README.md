@@ -72,7 +72,7 @@ Take it one step at a time. Each step has a status indicator so you always know 
     ├── bot.log             # Runtime log (created on first run)
     ├── fishbot_config.json # Your settings (auto-saved)
     └── debug_*.png         # Vision snapshots for calibration help
-
+```
 
 🔍 Troubleshooting
 
