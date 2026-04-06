@@ -136,4 +136,3 @@ MIT
 | **Troubleshooting = Causes + 1-line fixes**| Fast resolution. No walls of text when something goes wrong. |
 | **No prerequisites longer than a table** | Walls of version numbers before "hello" create task avoidance. |
 | **Build is literally one double-click** | Reduces activation energy to zero—nothing to figure out before the reward. |
-```
